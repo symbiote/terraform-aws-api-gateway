@@ -1,4 +1,4 @@
-# See https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions.html for additional 
+# See https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions.html for additional
 # configuration information.
 variable "openapi_config" {
   description = "The OpenAPI specification for the API"
@@ -21,6 +21,11 @@ variable "vpc_endpoints" {
   type        = list(string)
   description = "List of VPC Endpoint IDs to attach to the API Gateway"
   default     = null
+}
+
+variable "minimum_compression_size" {
+  description = "Responses in size greater than this will be compressed"
+  default = null
 }
 
 variable "logging_level" {
